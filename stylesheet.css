@@ -924,7 +924,8 @@ input::placeholder {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 1rem 0rem;
+        padding: 3rem 0rem 2rem 0rem;
+        gap:3rem;
     }
     #home .profile{
         width: 300px;
@@ -943,14 +944,81 @@ input::placeholder {
     .projects{
         width:auto;
     }
-    #home{
+    .home-data{
+        display: flex;
+        width: 80%;
+        gap:2rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .home-data ul{
+        width:100%;
+        display: flex;
+        justify-content: center;
+    }
+    .home-data i{
+        font-size: 2rem;
+    }
+    .object{
+        padding: 2rem 0rem;
+    }
+    .about-education{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .education,.inter,.school{
+        width:80%;
+        padding: 0rem;
+    }
+    .graduation{
+        padding: 0rem;
+    }
+    .skills-section{
+        height:auto;
+    }
+    .skills-heading{
+        padding-bottom: 2.5rem;
+    }
+    .skills-section ul{
         gap:1rem;
     }
-    .home-data{
+    .skills-section li{
+        padding: 5px;
+    }
+    #contact{
+        padding-bottom: 3rem;
+    }
+    .contact-container{
         display: flex;
         width: 80%;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+    }
+    .contact-section1,.contact-section2{
+        width:100%;
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-section1 input,.contact-section2 textarea{
+        width:100%;
+          display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #footer a{
+        font-size: x-large;
+    }
+    #footer ul{
+        gap:0.5rem;
+    }
+    #footer .btm-icon{
+        font-size: larger;
     }
 *{
     padding:0%
