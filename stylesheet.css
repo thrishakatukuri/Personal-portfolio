@@ -2,7 +2,9 @@
     margin: 0%;
     padding: 0%;
 }
-
+title{
+    font-style: italic;
+}
 body {
     background-color: black;
     color: white;
@@ -26,7 +28,9 @@ header {
     background-color: rgb(1, 18, 1);
 
 }
-
+.hamburg{
+    display: none;
+}
 .profile-logo {
     width: 30%;
     height: 80px;
@@ -92,6 +96,22 @@ nav a:hover {
     transform: scale(1.1);
     border-bottom: 2px solid rgb(4, 4, 71);
 }
+#check {
+    display: none;
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* tablets */
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    /* tablets */
+}
+
+@media  (min-width: 1440px) {
+    /* small screens */
+}
 
 /* header end */
 /* footer starts */
@@ -142,26 +162,53 @@ nav a:hover {
     background-color: black;
 
 }
-
 .profile {
     width: 500px;
     height: 500px;
     padding: 1rem;
+    position: relative;
+    border-radius: 50%;
+    background: linear-gradient(
+        45deg,
+        red,
+        rgb(53, 179, 196),
+        rgb(204, 32, 147),
+        blue,
+        rgb(52, 40, 105),
+        rgb(101, 5, 72),
+        red
+    );
+    background-size: 400%;
+    animation: glow-ring 10s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes glow-ring {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .profile img {
     width: 500px;
     height: 500px;
+    padding: 2px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 5px 5px 5px blue;
-    filter: drop-shadow(5px 5px 5px blue);
-    transition: all 0.2s ease-in;
+    background: black;
+    box-shadow: 0 0 60px rgba(12, 16, 123, 0.8);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.profile img:hover {
-    filter: drop-shadow(10px 10px 10px blue);
+.profile:hover img {
+    box-shadow: 0 0 60px rgba(12, 16, 123, 0.8);
+}
 
+
+.profile img:hover {
+    cursor: pointer;
 }
 
 .home-data {
@@ -189,7 +236,44 @@ nav a:hover {
     background-clip: text;
     color: transparent;
     margin-bottom: 1rem;
+}.typing {
+    font-size: 2.2rem;
+    font-style: italic;
+    background: linear-gradient(white, blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white; /* cursor */
+    width: 0ch;
+    animation: typing 10s steps(23) infinite;
+    --text1: "Front-end Developer";
+    --text2: "Back-end Developer";
+    --text3: "Full-Stack Web-Developer";
 }
+/* 
+@keyframes typing {
+    0%   { content: var(--text1); width: 0ch; }
+    15%  { content: var(--text1); width: 22ch; }
+    30%  { content: var(--text1); width: 0ch; }
+    48%  { content: var(--text2); width: 20ch; }
+    63%  { content: var(--text2); width: 0ch; }
+    81%  { content: var(--text3); width: 26ch; }
+    100% { content: var(--text3); width: 0ch; }
+}
+
+.typing::before {
+    content: var(--text1);
+    animation: changeText 12s infinite;
+}
+
+@keyframes changeText {
+    0%, 30%   { content: var(--text1); }
+    31%, 63%  { content: var(--text2); }
+    67%, 100% { content: var(--text3); }
+} */
 
 .home-data .personaldata {
     line-height: 2.5rem;
@@ -397,6 +481,10 @@ button {
     height: 100%;
     padding: 8% 10% 6% 10%;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .skills-heading h1 {
@@ -751,3 +839,120 @@ input::placeholder {
 }
 
 /* contact ends */
+
+@media  screen and (max-width: 767px) {
+    /* small screens */
+    body{
+        background: red;
+        width: 100%;
+    }
+    .profile-logo{
+        width: 80%;
+        display: flex;
+        padding-left: 2.5rem;
+        justify-content: flex-start;
+    }
+    .hamburg{
+        display: block;
+        height:auto;
+        font-size: 2rem;
+    }
+    .checkbtn{
+        display: flex;
+        float:right;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        }
+    header{
+        position: relative;
+        display: flex;
+        /* gap: 1rem;   */
+        width:100%;
+        overflow-x: hidden;
+        /*  */
+         display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0.8rem 1rem; */
+    background: black;
+    color: white;
+        
+    }
+   
+    
+    nav{
+        position: absolute;
+        top:1px;
+        width:100%;
+        right:0%;
+        height:auto;
+        right:-100%;
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0rem;
+        /*  */
+        position: absolute;
+        top: 60px;
+        right: -100%;
+        width: 100%;
+        background: red;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+    }
+     #check:checked ~ nav {
+        right: 0;
+    }
+    header ul{
+        display: block;
+        height:auto;
+        padding: 0%;
+        padding: 0%;
+        margin: 0%;
+        /*  */
+          display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #home {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem 0rem;
+    }
+    #home .profile{
+        width: 300px;
+        height:300px;
+    }
+    #home img{
+        width: 300px;
+        height:300px;
+    }
+    .home-data{
+        width:80%;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .projects{
+        width:auto;
+    }
+    #home{
+        gap:1rem;
+    }
+    .home-data{
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        justify-content: center;
+    }
+*{
+    padding:0%
+}
+}
