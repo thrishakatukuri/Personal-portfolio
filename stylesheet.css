@@ -286,7 +286,7 @@ nav a:hover {
     justify-content: start;
     gap: 1.5rem;
     list-style-type: none;
-    width: 50px;
+    width: 100%;
     height: 50px;
     /* fixed height */
 }
@@ -298,8 +298,7 @@ nav a:hover {
     align-items: center;
 }
 
-.home-data i,
-button {
+.home-data i{
     font-size: 2.5rem;
     background-color: black;
     border-radius: 50%;
@@ -310,6 +309,32 @@ button {
     transition: all 0.2s linear;
     box-shadow: 0 0 5px blue;
 
+}
+.home-data button{
+    background: black;
+    border: none;
+    border:1px solid blue;
+    padding: 0.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 5px blue;
+}
+.home-data button:hover{
+    background: rgb(23, 23, 91);
+    cursor: pointer;
+}
+
+button a{
+    text-decoration: none;
+    background: linear-gradient(white, blue, white);
+    background-clip: text;
+    color: transparent;
+    transition: all 0.2s linear;
+}
+
+button a:hover{
+    color: white;
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 5px blue);
 }
 
 .home-data i:hover {
@@ -512,7 +537,7 @@ button {
     height: 400px;
     align-items: center;
     justify-content: center;
-    background-color: rgb(1, 18, 1);
+    /* background-color: rgb(1, 18, 1); */
 
 }
 
@@ -733,7 +758,7 @@ button {
 /* projects ends */
 
 /* contact start */
-#contact {
+/* #contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -783,7 +808,6 @@ textarea,
     color: white;
     outline: none;
     border: 1px solid blue;
-    /* background: rgb(82, 79, 79); */
     background-color: black;
 }
 
@@ -840,8 +864,92 @@ input::placeholder {
     font-size: medium;
     height: 50px;
     padding: 0%;
+} */
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    background-color: black;
+}
+.contact-heading{
+    padding-top:8rem;
+}
+.contact-heading h1{
+    font-size: 3rem;
+    background: linear-gradient(blue, white);
+    background-clip: text;
+    color: transparent;
+}
+form{
+    width:80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 5% 5% 0% 5%;
 }
 
+.inputs{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:3rem;
+}
+form input,form textarea,form button{
+    height:80px;
+    width:80%;
+    border-radius: 20px;
+    background: transparent;
+    border: none;
+    border:2px solid blue;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    padding:0rem 2rem;
+}
+form input:focus,form textarea:focus,form button:focus{
+    box-shadow: 5px 5px 5px blue;
+    border:none;
+    outline: none;
+    border:1px solid blue;
+}
+.msg{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+}
+input::placeholder,textarea::placeholder{
+    color:rgb(158, 149, 149);
+    font-size: 1rem;
+
+}
+
+form textarea{
+    height:250px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+form button{
+    width:50%;
+    height:50px;
+    font-size: 1rem;
+    padding: 0%;
+}
 /* contact ends */
 
 @media  (min-width: 1024px) and (max-width:1439px){
@@ -933,6 +1041,10 @@ input::placeholder {
     }
     .contact-container input{
         width:80%;
+    }
+    form{
+        width:100%;
+        gap:5rem;
     }
 }
 @media  screen and (max-width: 1023px) {
@@ -1083,7 +1195,18 @@ input::placeholder {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-    }}
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    .inputs,.msg{
+        width:80%;
+    }
+    form input{
+        width:80%;
+    }
+}
 /*     
     header{
         position: fixed;
