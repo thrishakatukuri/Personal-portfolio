@@ -737,7 +737,7 @@ button a:hover{
     z-index: 1;
     overflow-y: auto;
     border-radius: 20px;
-    padding: 10%;
+    padding: 5% 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -913,7 +913,7 @@ form input,form textarea,form button{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: 1rem;
     padding:0rem 2rem;
 }
 form input:focus,form textarea:focus,form button:focus{
